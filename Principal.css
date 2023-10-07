@@ -1,0 +1,484 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para el body y fuente */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+.header-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+   
+}
+
+.login-button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+}
+
+    .login-button:hover {
+        background-color: #e67e22;
+        transform: scale(1.05);
+    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    header h1 {
+        font-size: 48px;
+        margin: 0;
+    }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+    nav a:hover {
+        color: #007bff;
+    }
+
+/* Sección de platillos destacados */
+.destacados {
+    background-color: #fff;
+    padding: 40px;
+    margin: 40px 0;
+}
+
+    .destacados h2 {
+        font-size: 36px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+.platillo {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+    .platillo img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .platillo h3 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+
+
+.horarios {
+    background-color: #fff;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+    .horarios h2 {
+        font-size: 36px;
+        margin-top: 0;
+        color: #111;
+    }
+
+.opening-hours {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+    ul li {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #111;
+    }
+
+        ul li strong {
+            font-weight: bold;
+            color: #f39c12;
+        }
+/* Pie de página */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left img {
+    width: 180px;
+    height: 180px;
+}
+
+.footer-center {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+    .footer-center h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #f39c12; /* Color de resalte */
+    }
+
+    .footer-center ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-center ul li {
+            margin-bottom: 10px;
+        }
+
+            .footer-center ul li a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .footer-center ul li a:hover {
+                    color: #f39c12; /* Color de resalte al pasar el mouse */
+                }
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+    padding: 0 20px;
+    align-items:flex-end;
+}
+
+.social-icons a img {
+    width: 30px; /* Ajusta el ancho de las imágenes de los íconos */
+    height: 30px; /* Ajusta el alto de las imágenes de los íconos */
+    display: flex;
+    align-items: center; /* Alinea verticalmente los íconos */
+    justify-content: flex-end;
+}
+
+.social-icon {
+    margin-right: 10px;
+}
+
+    .social-icon a {
+        color: #f39c12; /* Color de íconos de redes sociales */
+        text-decoration: none;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+        .social-icon a:hover {
+            color: #fff; /* Color al pasar el mouse sobre íconos de redes sociales */
+        }
+
+/* Botón de reserva */
+.reserve-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2980b9; /* Cambia el color de fondo del botón a azul */
+    color: #fff; /* Color del texto del botón */
+    font-weight: bold;
+    border-radius: 50px; /* Forma redondeada del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos de transición */
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-decoration: none; /* Elimina cualquier subrayado de texto */
+    outline: none; /* Elimina el contorno del botón al hacer clic */
+}
+
+    .reserve-button:hover {
+        background-color: #2980b9; /* Cambia el color de fondo del botón al pasar el mouse */
+        transform: scale(1.05); /* Escala ligeramente el botón al pasar el mouse */
+    }
+
+
+/* Texto de Copyright */
+.copyright {
+    margin-top: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Agrega estilos para los enlaces en el footer */
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+/* Estilos para la sección de horarios */
+.horarios {
+    font-family: 'Kristen ITC';
+    background-color:#f2f2f2;
+    color: #fff; /* Color del texto blanco */
+    padding: 60px 0;
+    text-align: center;
+}
+
+    .horarios h2 {
+        font-size: 36px;
+        margin-top: 0;
+        text-transform: uppercase; /* Texto en mayúsculas */
+    }
+
+.opening-hours {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilos para la animación pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplica la animación pulse a .opening-hours */
+.opening-hours {
+    animation: pulse 2s infinite; /* Aplica la animación pulse durante 2 segundos en bucle infinito */
+}
+.schedule-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.schedule-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .schedule-button:hover {
+        background-color: #e67e22;
+    }
+
+/* Estilos para la sección de ubicación */
+.ubicacion {
+    background-color: #f9f9f9;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para la información de ubicación */
+.ubicacion {
+    background-color: #f9f9f9;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para la información de ubicación */
+.ubicacion {
+    background-color: #f9f9f9;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para la información de ubicación */
+/* Estilos para la información de ubicación */
+.ubicacion-info {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+    .ubicacion-info h2 {
+        font-size: 28px;
+        margin-top: 0;
+        color: #333;
+    }
+
+    .ubicacion-info p, .ubicacion-info .contacto-info li {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .ubicacion-info address {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .ubicacion-info .contacto-info {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+
+/* Estilos para el mapa */
+.mapa {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .mapa iframe {
+        filter: grayscale(100%);
+        width: 100%;
+        max-width: 100%;
+        height: 450px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .destacados {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .destacados h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    .cartas-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    
+    /* Establece un ancho máximo para los platillos y margen */
+    .platillo {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+    width: 300px; /* Ancho fijo */
+    height: 400px; /* Alto fijo */
+    transition: transform 0.2s ease;
+}
+    
+    .platillo:hover {
+        transform: scale(1.05);
+    }
+    .platillo-img img {
+        max-width: 100%;
+        height: 200px; /* Establece la altura deseada */
+        border-radius: 10px 10px 0 0;
+        object-fit:cover;
+    }
+    
+    .platillo-info {
+        padding: 15px;
+        height: 250px; /* Establece la altura deseada */
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    .precio {
+        font-weight: bold;
+        color: #f76c6c; /* Cambia el color a uno llamativo */
+        font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+        text-transform: uppercase; /* Convierte el texto a mayúsculas */
+        letter-spacing: 1px; /* Agrega un pequeño espaciado entre letras */
+        margin-top: 10px; /* Añade un poco de espacio desde la descripción */
+    }
+    p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    
+    .btn-mas-info {
+        background-color: #333;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn-mas-info:hover {
+        background-color: #0056b3;
+    }

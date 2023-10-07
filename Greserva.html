@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reservas</title>
+    <link rel="stylesheet" type="text/css" href="Greserva.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Reservas</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Reservas Realizadas</h2>
+            <table id="reservasTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Personas</th>
+                        <th>Mesa</th>
+                        <th>Comentarios</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="reservasBody">
+                    <!-- Las reservas se cargarán aquí mediante PHP -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    
+    <script>
+        const reservasBody = document.getElementById('reservasBody');
+
+        function cargarReservas() {
+            // No necesitas realizar una solicitud AJAX en formato JSON
+            // Simplemente carga el contenido de obtener_reservas.php directamente
+            fetch('obtener_reservas.php')
+                .then(response => response.text())
+                .then(data => {
+                    reservasBody.innerHTML = data;
+                    agregarEventosEditarEliminar();
+                })
+                .catch(error => {
+                    console.error('Error al cargar reservas:', error);
+                });
+        }
+
+        function agregarEventosEditarEliminar() {
+            const editarButtons = document.querySelectorAll('.editar-button');
+            const eliminarButtons = document.querySelectorAll('.eliminar-button');
+
+            editarButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Obtener el ID de la reserva a editar
+                    const reservaId = button.getAttribute('data-reserva-id');
+
+                    // Redirigir a la página de edición pasando el ID como parámetro en la URL
+                    window.location.href = `editar_reserva.php?id=${reservaId}`;
+                });
+            });
+
+            eliminarButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Obtener el ID de la reserva a eliminar
+                    const reservaId = button.getAttribute('data-reserva-id');
+
+                    // Preguntar al usuario si realmente desea eliminar la reserva
+                    const confirmacion = confirm('¿Seguro que deseas eliminar esta reserva?');
+
+                    if (confirmacion) {
+                        // Realizar una solicitud AJAX o redirigir a una página PHP para eliminar la reserva
+                        // Puedes usar fetch o enviar una solicitud POST a eliminar_reserva.php pasando el ID
+                        // Después de eliminar la reserva, puedes recargar la página o actualizar la lista de reservas
+                    }
+                });
+            });
+        }
+
+        // Cargar las reservas al cargar la página
+        cargarReservas();
+    </script>
+</body>
+</html>

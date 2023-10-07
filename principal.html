@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Mi Delicia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="Principal.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-utensils"></i> Restaurante Mi Delicia</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#"><i class="fas fa-utensil-spoon"></i> Menú</a></li>
+                <li><a href="reserva.html"><i class="far fa-calendar-check"></i> Reservas</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header-button-container">
+            <a href="login.html" class="login-button"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+        </div>
+    </header>
+    
+        <section class="destacados">
+            <h2 >Platillos Destacados</h2>
+            <div class="cartas-container">
+            <div class="platillo">
+                <div class="platillo-img">
+                    <img src="platos/cacari.jpg" alt="Platillo 1">
+                </div>
+                <div class="platillo-info">
+                    <h3>Cacarí</h3>
+                    <p class="precio">$10.99</p>
+                    <p>Un delicioso platillo de Cacarí con sabores auténticos.</p>
+                    <button class="btn-mas-info">Más Información</button>
+                </div>
+            </div>
+            <div class="platillo">
+                <div class="platillo-img">
+                    <img src="platos/mariscos.jpg" alt="Platillo 2">
+                </div>
+                <div class="platillo-info">
+                    <h3> Mariscos</h3>
+                    <p class="precio">$12.99</p>
+                    <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                    <button class="btn-mas-info">Más Información</button>
+                </div>
+            </div>
+            <div class="platillo">
+                <div class="platillo-img">
+                    <img src="platos/marrakesh.jpg" alt="Platillo 2">
+                </div>
+                <div class="platillo-info">
+                    <h3> Marrakesh</h3>
+                    <p class="precio">$12.99</p>
+                    <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                    <button class="btn-mas-info">Más Información</button>
+                </div>
+            </div>
+            <div class="platillo">
+                <div class="platillo-img">
+                    <img src="platos/picante.jpg" alt="Platillo 2">
+                </div>
+                <div class="platillo-info">
+                    <h3> Picante</h3>
+                    <p class="precio">$12.99</p>
+                    <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                    <button class="btn-mas-info">Más Información</button>
+                </div>
+                </div>
+                <div class="platillo">
+                    <div class="platillo-img">
+                        <img src="platos/sushi.jpg" alt="Platillo 2">
+                    </div>
+                    <div class="platillo-info">
+                        <h3> Sushi</h3>
+                        <p class="precio">$12.99</p>
+                        <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                        <button class="btn-mas-info">Más Información</button>
+                    </div>
+                </div>
+                <div class="platillo">
+                    <div class="platillo-img">
+                        <img src="platos/yassa.jpg" alt="Platillo 2">
+                    </div>
+                    <div class="platillo-info"> 
+                        <h3> Yassa</h3>
+                        <p class="precio">$12.99</p>
+                        <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                        <button class="btn-mas-info">Más Información</button>
+                    </div>
+                </div>
+                <div class="platillo">
+                    <div class="platillo-img">
+                        <img src="platos/pasta.jpg" alt="Platillo 2">
+                    </div>
+                    <div class="platillo-info">
+                        <h3> Pasta</h3>
+                        <p class="precio">$12.99</p>
+                        <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                        <button class="btn-mas-info">Más Información</button>
+                    </div>
+                </div>
+                <div class="platillo">
+                    <div class="platillo-img">
+                        <img src="platos/fries.jpg" alt="Platillo 2">
+                    </div>
+                    <div class="platillo-info">
+                        <h3> Fries</h3>
+                        <p class="precio">$12.99</p>
+                        <p>Disfruta de una variedad de mariscos frescos y deliciosos.</p>
+                        <button class="btn-mas-info">Más Información</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="horarios">
+            <h2>Horarios de Atención</h2>
+            <p class="opening-hours"></p>
+            <ul>
+                <li><strong>Atendemos de Lunes a Viernes:</strong>
+                <li><strong>Atendemos los Sábados:</strong>
+                <li><strong>Atendemos los Domingos y feriados:</strong>
+            </ul>
+            <div class="buttons">
+                <button id="lunesViernesButton" class="schedule-button">Lunes a Viernes</button>
+                <button id="sabadosButton" class="schedule-button">Sábados</button>
+                <button id="domingosFeriadosButton" class="schedule-button">Domingos y Feriados</button>
+            </div>
+        </section>
+    </section>
+    
+
+    <script>
+        // Función para obtener el día de la semana actual (0 = Domingo, 1 = Lunes, ..., 6 = Sábado)
+        function getDayOfWeek() {
+            const now = new Date();
+            return now.getDay();
+        }
+
+        // Función para actualizar los horarios según el día de la semana
+        function updateOpeningHours() {
+            const dayOfWeek = getDayOfWeek();
+            const openingHours = document.querySelector(".opening-hours");
+
+            // Define los horarios según el día de la semana actual
+            const hours = [
+                "Cerrado",
+                "Lunes  2:00 PM - 10:00 PM",
+                "Martes 2:00 PM - 10:00 PM",
+                "Miércoles 2:00 PM - 10:00 PM",
+                "Jueves 2:00 PM - 10:00 PM",
+                "Viernes 2:00 PM- 10:00 PM",
+                "Sábados: 12:00 PM - 6:00 PM",
+                "Domingos: 12:00 PM- 6:00 PM",
+            ];
+
+            openingHours.textContent = `Hoy estamos abiertos de: ${hours[dayOfWeek]}`;
+        }
+
+        // Función para mostrar los horarios de Lunes a Viernes
+        function showLunesViernes() {
+            const openingHours = document.querySelector(".opening-hours");
+            const hours = "Lunes a Viernes: 2:00 PM - 10:00 PM";
+            openingHours.textContent = `Horarios de ${hours}`;
+        }
+
+        // Función para mostrar los horarios de Sábados
+        function showSabados() {
+            const openingHours = document.querySelector(".opening-hours");
+            const hours = "Sábados: 12:00 PM - 6:00 PM";
+            openingHours.textContent = `Horarios de ${hours}`;
+        }
+
+        // Función para mostrar los horarios de Domingos y Feriados
+        function showDomingosFeriados() {
+            const openingHours = document.querySelector(".opening-hours");
+            const hours = "Domingos y Feriados: 12:00 PM - 3:00 PM";
+            openingHours.textContent = `Horarios de ${hours}`;
+        }
+
+        // Ejecuta la función al cargar la página
+        window.onload = () => {
+            updateOpeningHours();
+            const lunesViernesButton = document.getElementById("lunesViernesButton");
+            const sabadosButton = document.getElementById("sabadosButton");
+            const domingosFeriadosButton = document.getElementById("domingosFeriadosButton");
+
+            lunesViernesButton.addEventListener("click", showLunesViernes);
+            sabadosButton.addEventListener("click", showSabados);
+            domingosFeriadosButton.addEventListener("click", showDomingosFeriados);
+        };
+    </script>
+    <section class="ubicacion">
+        <div class="ubicacion-info">
+            <h2>Ubicación del Restaurante</h2>
+            <p>¡Te damos la bienvenida a nuestro restaurante Mi Delicia! Estamos ubicados en el corazón de la ciudad, en una ubicación conveniente que te permitirá disfrutar de la mejor comida en un ambiente acogedor.</p>
+            <p>Visítanos en la siguiente dirección:</p>
+            <address>
+                <strong>Dirección:</strong> Julio Cesar Tello 475, Ate 15487
+            </address>
+            <p>Para consultas y reservas, contáctanos:</p>
+            <ul class="contacto-info">
+                <li><strong>Teléfono:</strong> (123) 456-7890</li>
+                <li><strong>Correo Electrónico:</strong> info@midelicia.com</li>
+            </ul>
+        </div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.3349138143435!2d-76.89041112913753!3d-12.020448576428445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3cd0d21049b%3A0x12bba82c10cdb42!2sRestaurante%20El%20Trebol!5e0!3m2!1ses-419!2spe!4v1696465953678!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="Resources/restaurant.png" alt="Logo de Restaurante Mi Delicia">
+            </div>
+            <div class="footer-center">
+                <h3>Acerca de</h3>
+                <ul>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Nuestra comida</a></li>
+                    <li><a href="#">Ubicación</a></li>
+                    <li><a href="#">Horario</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/restaurantemidelicia" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/mideliciarestaurant/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon">
+                        <i class="far fa-envelope fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="reservas">
+            <h2>Reserva una Mesa</h2>
+            <p>Disfruta de una comida deliciosa en nuestro restaurante. ¡Haz tu reserva ahora!</p>
+            <a href="reserva.html" class="reserve-button">Reservar Mesa</a>
+        </section>
+        <p class="copyright">&copy; 2023 Restaurante Mi Delicia</p>
+    </footer>
+</body>
+</html>

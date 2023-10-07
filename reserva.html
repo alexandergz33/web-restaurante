@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Mesa</title>
+    <link rel="stylesheet" type="text/css" href="reserva.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <!-- Incluye flatpickr y su CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-center mt-4">Reserva de Mesa</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form id="reservaForm" method="POST" action="mostrar_reservas.php">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <i class="far fa-calendar-alt"></i>
+                    <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Seleccionar Fecha" required>
+                </div>
+                <div class="form-group">
+                    <i class="far fa-clock"></i>
+                    <input type="time" class="form-control" id="hora" name="hora" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-users"></i>
+                    <input type="number" class="form-control" id="personas" name="personas" min="1" placeholder="Número de Personas" required>
+                </div>
+                <div class="form-group">
+                    <label class="mesa-label" for="mesa">Elija su mesa:</label>
+                    <div class="mesa-select-container">
+                    <select class="mesa-select" id="mesa" name="mesa">
+                        <option value="1">Mesa 1</option>
+                        <option value="2">Mesa 2</option>
+                        <option value="3">Mesa 3</option>
+                        <option value="4">Mesa 4</option>
+                        <option value="5">Mesa 5</option>
+                        <option value="6">Mesa 6</option>
+                        <option value="7">Mesa 7</option>
+                        <option value="8">Mesa 8</option>
+                        <option value="9">Mesa 9</option>
+                        <option value="10">Mesa 10</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-comment"></i>
+                    <textarea class="form-control" id="comentarios" name="comentarios" rows="4" placeholder="Comentarios adicionales"></textarea>
+                </div>
+                <button type="submit" class="reserva-button">Reservar Mesa</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        // Configura flatpickr para la fecha y hora
+        flatpickr('#fecha', {
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            minDate: "today",
+        });
+
+        flatpickr('#hora', {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],   
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.mesa-label {
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.mesa-select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+/* Estilo para el botón de reservar mesa */
+.reserva-button {
+background-color: #f39c12;
+color: #fff;
+padding: 10px 20px;
+font-size: 18px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-top: 20px;
+width: 100%;
+}
+
+.reserva-button:hover {
+background-color: #e67e22;
+}
+
+#respuesta {
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}

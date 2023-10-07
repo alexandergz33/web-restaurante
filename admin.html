@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Clientes</title>
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <table id="clientesTable">
+        <thead>
+            
+        </thead>
+        <tbody>
+            <!-- Aquí se cargarán dinámicamente las filas de usuarios -->
+        </tbody>
+    </table>
+
+    <!-- Modal para editar cliente -->
+    <div id="editarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Editar Cliente</h2>
+            <form id="editarForm" action="editar_usuario.php" method="POST">
+                <!-- Campos de edición -->
+                <input type="hidden" id="clienteId" name="id" value="">
+                <input type="text" id="nombreEditar" name="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellidoEditar" name="apellido" placeholder="Apellido" required>
+                <input type="email" id="emailEditar" name="email" placeholder="Correo Electrónico" required>
+                <button type="submit" class="Guardar-Cambios">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Función para cargar los usuarios desde el servidor
+        function cargarUsuarios() {
+            fetch('obtener_usuarios.php')
+                .then(response => response.text())
+                .then(data => {
+                    const clientesTable = document.getElementById('clientesTable').getElementsByTagName('tbody')[0];
+                    clientesTable.innerHTML = data;
+
+                    // Agregar el evento de clic a los botones de "Editar"
+                    const editarButtons = document.querySelectorAll('.editar-button');
+                    editarButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const fila = button.closest('tr');
+                            const id = fila.getAttribute('data-cliente-id');
+                            const nombre = fila.querySelector('.nombre').textContent;
+                            const apellido = fila.querySelector('.apellido').textContent;
+                            const email = fila.querySelector('.email').textContent;
+
+                            document.getElementById('clienteId').value = id;
+                            document.getElementById('nombreEditar').value = nombre;
+                            document.getElementById('apellidoEditar').value = apellido;
+                            document.getElementById('emailEditar').value = email;
+
+                            document.getElementById('editarModal').style.display = 'block';
+                        });
+                    });
+
+                    // Agregar el evento de clic al botón de cerrar el modal
+                    const closeModal = document.getElementById('closeModal');
+                    closeModal.addEventListener('click', () => {
+                        document.getElementById('editarModal').style.display = 'none';
+                    });
+
+                    // Agregar el evento de clic a los botones de "Eliminar"
+                    const eliminarButtons = document.querySelectorAll('.eliminar-button');
+                    eliminarButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const fila = button.closest('tr');
+                            const id = fila.getAttribute('data-cliente-id');
+
+                            fetch('eliminar_usuario.php', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded',
+                                },
+                                body: `id=${id}`,
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    cargarUsuarios();
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error al eliminar usuario:', error);
+                            });
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al cargar usuarios:', error);
+                });
+        }
+
+        // Llama a la función para cargar usuarios cuando la página se carga
+        window.addEventListener('load', () => {
+            cargarUsuarios();
+        });
+
+        // Resto de tu JavaScript para el modal, editar, eliminar, etc.
+    </script>
+</body>
+</html>

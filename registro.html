@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" type="text/css" href="Registro.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Cliente</h1>
+        <form id="registrationForm" method="POST" action="registro_user.php">
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Contraseña" required>
+            </div>
+            <div class="input-container">
+                <i class="fas fa-user-cog"></i>
+                <select id="rol" name="rol" required>
+                    <option value="usuario">Usuario</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+            <button type="submit" class="registro-button">Registrarse</button>
+        </form>
+        <p>¿Ya tienes una cuenta? <a href="login.html">Iniciar Sesión</a></p>
+    </div>
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtener los datos del formulario
+            const formData = new FormData(registrationForm);
+
+            // Realizar una solicitud AJAX al servidor para procesar el registro
+            fetch('registro_user.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Manejar la respuesta del servidor
+                alert(data); // Puedes mostrar un mensaje de éxito o error
+                if (data === '¡Registro exitoso!') {
+                    // Redirigir al usuario a la página de inicio de sesión
+                    window.location.href = 'login.html';
+                }
+            })
+            .catch(error => {
+                console.error('Error al registrar usuario:', error);
+            });
+        });
+    </script>
+</body>
+</html>

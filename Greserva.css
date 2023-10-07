@@ -1,0 +1,105 @@
+﻿ /* Reset de estilos */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Tabla de reservas */
+#reservasTable {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+}
+
+#reservasTable th,
+#reservasTable td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#reservasTable th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Botones de editar y eliminar */
+.editar-button, .eliminar-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.editar-button:hover, .eliminar-button:hover {
+    background-color: #0056b3;
+}
+
+/* Formulario de reserva */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea,
+output {
+    width: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para el rango (mesa) */
+input[type="range"] {
+    width: 100%;
+}
+
+/* Estilos para el botón de reserva */
+.reserva-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reserva-button:hover {
+    background-color: #0056b3;
+}
